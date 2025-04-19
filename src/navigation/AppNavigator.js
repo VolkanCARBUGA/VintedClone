@@ -11,10 +11,11 @@ import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
 import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen';
 import SellScreen from '../screens/SellScreen';
-import MessagesScreen from '../screens/MessagesScreen';
+import MessagesScreen from '../screens/MessageScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import ProductDetailScreen from '../screens/ProductDetailScreen';
 import ConversationDetailScreen from '../screens/ConversationDetailScreen';
+import NotificationsScreen from '../screens/NotificationsScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -81,6 +82,7 @@ const MainTabNavigator = () => {
           tabBarIcon: ({ focused }) => <TabIcon name="Sell" focused={focused} />
         }}
       />
+      
       <Tab.Screen 
         name="Messages" 
         component={MessagesScreen} 
@@ -122,6 +124,11 @@ const AppNavigator = () => {
         {/* Detail screens */}
         <Stack.Screen name="ProductDetail" component={ProductDetailScreen} />
         <Stack.Screen name="ConversationDetail" component={ConversationDetailScreen} />
+        {/* Notifications screen */}
+        <Stack.Screen name="Notifications" component={NotificationsScreen} />
+        
+        {/* Search screen */}
+        <Stack.Screen name="Search" component={SearchScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
